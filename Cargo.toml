@@ -1,0 +1,21 @@
+[package]
+name = "firestore-tonic"
+version = "0.1.0"
+authors = ["Koji Murata <malt.koji@gmail.com>"]
+edition = "2018"
+
+[[bin]]
+name = "firestore-client"
+path = "src/client.rs"
+
+[dependencies]
+log = { version = "0.4", features = ["release_max_level_warn"] }
+env_logger = "0.7.1"
+gcp_auth = "0.1.5"
+tonic = { version = "0.3", features = ["tls", "tls-roots"] }
+prost = "0.6"
+prost-types = "0.6"
+tokio = { version = "0.2", features = ["macros"] }
+
+[build-dependencies]
+tonic-build = "0.3"
